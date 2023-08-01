@@ -1,0 +1,20 @@
+.dayLabels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+.dayLabel {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    line-height: 100%;
+    color: #333;
+    border: 1px solid black;
+    border-radius: 15px;
+}
