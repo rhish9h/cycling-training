@@ -1,9 +1,35 @@
 import React from "react";
 
 const AllDays = () => {
+    const today = new Date();
+    const month = today.getMonth();
+    const year = today.getFullYear();
+    // next month's 0th day ie give number of days of current month
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const daysInPrevMonth = new Date(year, month, 0).getDate();
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDay = new Date(year, month, daysInMonth).getDay();
+    const days = [];
+
+    for (let i = daysInPrevMonth - firstDay + 2; i <= daysInPrevMonth; i++) {
+        days.push(i);
+    }
+
+    for (let i = 1; i <= daysInMonth; i++) {
+        days.push(i);
+    }
+
+    for (let i = 1; i <= 7 - lastDay; i++) {
+        days.push(i);
+    }
+
     return (
         <div>
-            All Days
+            {days.map((day, index) => (
+                <div>
+                    {day}
+                </div>
+            ))}
         </div>
     )
 }
