@@ -1,4 +1,6 @@
 import React from "react";
+import DayCard from "./dayCard/DayCard";
+import styles from './AllDays.module.css';
 
 const AllDays = () => {
     const today = new Date();
@@ -24,12 +26,14 @@ const AllDays = () => {
     }
 
     return (
-        <div>
-            {days.map((day, index) => (
-                <div>
-                    {day}
-                </div>
-            ))}
+        <div className={styles.gridContainer}>
+            <div className={styles.daysGrid}>
+                {days.map((day, index) => (
+                    <div>
+                        <DayCard day={day} />
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

@@ -1,0 +1,12 @@
+.gridContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.daysGrid {
+    display: grid;
+    grid-template-columns: repeat(7, 0fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}

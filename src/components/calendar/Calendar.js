@@ -5,7 +5,9 @@ import DayLabels from "./dayLabels/DayLabels";
 import AllDays from "./allDays/AllDays";
 
 const Calendar = () => {
-    const [ curMonth, setCurMonth ] = useState("January");
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
+                    'August', 'September', 'October', 'November', 'December'];
+    const [ curMonth, setCurMonth ] = useState(months[new Date().getMonth()]);
 
     return (
         <div className={styles.calendar}>
