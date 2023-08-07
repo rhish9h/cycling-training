@@ -2,10 +2,9 @@ import React from "react";
 import DayCard from "./dayCard/DayCard";
 import styles from './AllDays.module.css';
 
-const AllDays = () => {
-    const today = new Date();
-    const month = today.getMonth();
-    const year = today.getFullYear();
+const AllDays = ({curDate}) => {
+    const month = curDate.getMonth();
+    const year = curDate.getFullYear();
     // next month's 0th day ie give number of days of current month
     const daysInMonth = new Date(year, month + 1, 0).getDate();
     const daysInPrevMonth = new Date(year, month, 0).getDate();
@@ -29,7 +28,7 @@ const AllDays = () => {
         <div className={styles.gridContainer}>
             <div className={styles.daysGrid}>
                 {days.map((day, index) => (
-                    <div>
+                    <div key={index}>
                         <DayCard day={day} />
                     </div>
                 ))}
